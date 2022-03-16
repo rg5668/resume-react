@@ -30,9 +30,9 @@ const Dots = ({ scrollIndex }) => {
       >
         <Dot num={1} id={"section1"} scrollIndex={scrollIndex}></Dot>
         <Dot num={2} id={"section2"} scrollIndex={scrollIndex}></Dot>
-        <Dot num={3} id={"section3"} scrollIndex={scrollIndex}></Dot>
+        {/* <Dot num={3} id={"section3"} scrollIndex={scrollIndex}></Dot>
         <Dot num={4} id={"section4"} scrollIndex={scrollIndex}></Dot>
-        <Dot num={5} id={"section5"} scrollIndex={scrollIndex}></Dot>
+        <Dot num={5} id={"section5"} scrollIndex={scrollIndex}></Dot> */}
       </div>
     </div>
   );

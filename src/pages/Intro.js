@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import CommonButton from "../components/CommonButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faHomeAlt, faHomeLg } from "@fortawesome/free-solid-svg-icons";
 
 const DIVIDER_HEIGHT = 5;
 
@@ -15,6 +17,9 @@ const Intro = () => {
 
   const navigate = useNavigate();
 
+  let currentDirection = "";
+  let lastScrollTop = 0;
+
   const wheelHandler = (e) => {
     e.preventDefault();
     const { deltaY } = e;
@@ -24,6 +29,7 @@ const Intro = () => {
     if (deltaY > 0) {
       // 현재 1 페이지
       //top이 0보다 크거나 페이지 100vh가 top보다 크거나
+
       if (scrollTop >= 0 && scrollTop < pageHeight) {
         //현재 2페이지
         outerDivRef.current.scrollTo({
@@ -114,12 +120,21 @@ const Intro = () => {
       return () => {
         outerDivRefCurrent.removeEventListener("wheel", wheelHandler);
       };
-    }, 1000);
+    }, 100);
   });
 
   return (
     <div ref={outerDivRef} className="outer">
-      <Header rightChild={<Navbar />} leftChild={<CommonButton text={"<"} />} />
+      <Header
+        rightChild={<Navbar />}
+        leftChild={
+          <CommonButton
+            text={<FontAwesomeIcon icon={faHomeLg} />}
+            type={"positive"}
+            onClick={() => navigate("/main")}
+          />
+        }
+      />
       <Dots scrollIndex={scrollIndex} />
 
       <div className="Full-inner bg-yellow">
@@ -131,12 +146,53 @@ const Intro = () => {
               <br />
               임건희 포토폴리오 웹 사이트입니다.
             </span>
-            <div className="Intro-btn">
-              <CommonButton
-                text={"메인 페이지로 가기"}
-                type={"home_detail"}
-                onClick={() => navigate("/main")}
-              />
+
+            <div className="Intro-btn-t">
+              <span className="Intro-btn">
+                <CommonButton
+                  text={"#메인으로 바로 가기"}
+                  type={"home_detail"}
+                  onClick={() => navigate("/main")}
+                />
+              </span>
+              <span className="Intro-btn">
+                <CommonButton
+                  text={"#이력서 바로보기"}
+                  type={"home_detail"}
+                  onClick={() => navigate("/aboutme")}
+                />
+              </span>
+              <span className="Intro-btn">
+                <CommonButton
+                  text={"#사용 스킬 바로보기"}
+                  type={"home_detail"}
+                  onClick={() => navigate("/aboutme")}
+                />
+              </span>
+            </div>
+
+            <div className="Intro-btn-t">
+              <span className="Intro-btn">
+                <CommonButton
+                  text={"#블로그 링크보기"}
+                  type={"home_detail"}
+                  onClick={() => navigate("/main")}
+                />
+              </span>
+              <span className="Intro-btn">
+                <CommonButton
+                  text={"#프로젝트 바로보기"}
+                  type={"home_detail"}
+                  onClick={() => navigate("/aboutme")}
+                />
+              </span>
+              <span className="Intro-btn">
+                <CommonButton
+                  text={"#경력 바로보기"}
+                  type={"home_detail"}
+                  onClick={() => navigate("/aboutme")}
+                />
+              </span>
             </div>
           </span>
         </div>
@@ -146,7 +202,7 @@ const Intro = () => {
       <div className="Full-inner bg-blue">
         <div className="Intro-Container">
           <span>
-            <span className="Title-Font">인적사항</span>
+            <span className="Title-Font">간략한 소개</span>
             <span className="Sub-Font">
               <br />
               이름 : <span className="Sub-Font-1">임건희</span>
@@ -162,6 +218,51 @@ const Intro = () => {
               주소 :
               <span className="Sub-Font-1">경기도 성남시 중원구 금빛로</span>
             </span>
+            <div>
+              <h4>사용한 & 사용 가능한 스킬</h4>
+              <span>Font-End : </span>
+              <CommonButton type={"hash_tag"} text={"#HTML"}></CommonButton>
+              <CommonButton type={"hash_tag"} text={"#CSS"}></CommonButton>
+              <CommonButton
+                type={"hash_tag"}
+                text={"#Javascript"}
+              ></CommonButton>
+              <CommonButton type={"hash_tag"} text={"#React"}></CommonButton>
+            </div>
+            <div className="Intro-btn-t">
+              <span>Back-End : </span>
+              <CommonButton type={"hash_tag"} text={"#JAVA"}></CommonButton>
+              <CommonButton type={"hash_tag"} text={"#Spring"}></CommonButton>
+              <CommonButton
+                type={"hash_tag"}
+                text={"#Javascript"}
+              ></CommonButton>
+              <CommonButton type={"hash_tag"} text={"#Oracle"}></CommonButton>
+            </div>
+            <div className="Intro-btn-t">
+              <span>Version Control : </span>
+              <CommonButton type={"hash_tag"} text={"#GitHub"}></CommonButton>
+              <CommonButton
+                type={"hash_tag"}
+                text={"#Sourcetree"}
+              ></CommonButton>
+            </div>
+
+            <div className="Intro-btn-t">
+              <span>Design : </span>
+              <CommonButton
+                type={"hash_tag"}
+                text={"#PhotoShop"}
+              ></CommonButton>
+              <CommonButton type={"hash_tag"} text={"#XD"}></CommonButton>
+            </div>
+
+            <div className="Intro-btn-t">
+              <span>Version Control : </span>
+              <CommonButton type={"hash_tag"} text={"#Zeplin"}></CommonButton>
+              <CommonButton type={"hash_tag"} text={"#Jira"}></CommonButton>
+              <CommonButton type={"hash_tag"} text={"#Office"}></CommonButton>
+            </div>
           </span>
 
           <span>
@@ -186,9 +287,10 @@ const Intro = () => {
           </span>
         </div>
       </div>
-      <div className="divider" />
 
-      <div className="Full-inner bg-blue">
+      {/* <div className="divider" /> */}
+
+      {/* <div className="Full-inner bg-blue">
         <div className="Intro-Container">
           <span className="Sub-Font">
             <span className="Title-Font">사용가능 & 사용해본 스킬</span>
@@ -253,7 +355,7 @@ const Intro = () => {
             </div>
           </span>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

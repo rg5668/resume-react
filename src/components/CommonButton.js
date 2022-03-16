@@ -1,5 +1,5 @@
 const CommonButton = ({ text, type, onClick }) => {
-  //   const btnType = ["positive", "negative", "home_detail", "detail"].includes(type) ? type : "default";
+  //   const btnType = ["positive", "negative", "home_detail", "detail", "hash_tag"].includes(type) ? type : "default";
   return (
     <button
       className={["CommonButton", `CommonButton_${type}`].join(" ")}
