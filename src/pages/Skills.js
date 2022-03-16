@@ -20,6 +20,7 @@ import {
   faSourcetree,
 } from "@fortawesome/free-brands-svg-icons";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const Skills = () => {
   const navigate = useNavigate();
@@ -34,7 +35,7 @@ const Skills = () => {
             onClick={() => navigate(-1)}
           />
         }
-        rightChild={<CommonButton />}
+        rightChild={<Navbar />}
       />
 
       <div className="Skills">

@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import CommonButton from "../components/CommonButton";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Navbar from "../components/Navbar";
 
 const Aboutme = () => {
   const navigate = useNavigate();
@@ -16,13 +17,7 @@ const Aboutme = () => {
             onClick={() => navigate(-1)}
           />
         }
-        rightChild={
-          <CommonButton
-            text={">"}
-            type={"positive"}
-            onClick={() => navigate(-1)}
-          />
-        }
+        rightChild={<Navbar />}
       />
       <div className="Aboutme">
         <h2>LimKunHee Resume</h2>

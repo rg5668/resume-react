@@ -15,9 +15,10 @@ import {
   faBook,
 } from "@fortawesome/free-solid-svg-icons";
 
-import CommonButton from "../components/CommonButton";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Navbar from "../components/Navbar";
+import CommonButton from "../components/CommonButton";
 
 SwiperCore.use([Navigation, Pagination, Autoplay]);
 
@@ -25,16 +26,7 @@ const Main = () => {
   const navigate = useNavigate();
   return (
     <div className="inner">
-      <Header
-        rightChild={
-          <CommonButton
-            text={">"}
-            type={"positive"}
-            onClick={() => navigate(-1)}
-          />
-        }
-        leftChild={<CommonButton />}
-      />
+      <Header rightChild={<Navbar />} leftChild={<CommonButton text={"<"} />} />
       <div className="Main">
         <article>
           <section>

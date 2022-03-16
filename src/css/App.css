@@ -1,14 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+.content {
+  height: 100vh;
+}
 
 body {
-  font-family: "Yeon Sung";
+  margin: 0;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 .inner {
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  overflow: hidden;
 }
 
 a {
@@ -72,8 +81,19 @@ header .headText {
 }
 
 .CommonButton_default {
-  background-color: unset;
-  cursor: none;
+  background-color: #fff;
+  color: #fff;
+  cursor: unset;
+}
+
+.CommonButton_detail {
+  background-color: #0a174e;
+  color: #f5d042;
+}
+
+.CommonButton_home_detail {
+  background-color: #f5d042;
+  color: #0a174e;
 }
 
 .CommonButton_positive {
@@ -202,6 +222,8 @@ footer {
 .Aboutme > h2 {
   font-size: 1.8rem;
   margin-bottom: 2%;
+  border-bottom: 2px solid #aaaaaa;
+  padding-bottom: 15px;
 }
 
 .Aboutme img {
@@ -265,6 +287,8 @@ td {
 .Skills > h2 {
   font-size: 1.8rem;
   margin-bottom: 2%;
+  border-bottom: 2px solid #aaaaaa;
+  padding-bottom: 15px;
 }
 
 .Skills .Skills-Icon {
@@ -292,7 +316,7 @@ td {
 }
 
 .Skills-Icon > span > svg {
-  width: 140px;
+  width: 120px;
   height: 120px;
   cursor: pointer;
 }
@@ -304,10 +328,259 @@ td {
 }
 
 .Skills-Icon > span {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   line-height: 1.87;
 }
 
 .Skills-content {
   text-align: left;
+}
+
+/* Archiving */
+
+.inner .Archiving {
+  min-height: 100vh;
+}
+
+.Archiving {
+  padding: 60px 30px 30px 30px;
+}
+
+.Archiving > h2 {
+  border-bottom: 2px solid #aaaaaa;
+  padding-bottom: 15px;
+}
+
+.Archiving .Archiving-Group {
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  min-height: 100vh;
+}
+
+.Archiving .Archiving-Group > div {
+  text-align: center;
+}
+
+.Archiving-Git > span > svg {
+  width: 140px;
+  height: 120px;
+  cursor: pointer;
+}
+
+.Archiving-T > span > svg {
+  width: 140px;
+  height: 120px;
+  cursor: pointer;
+}
+
+.Archiving-content {
+  font-size: 1.1rem;
+}
+
+/* Career */
+
+.inner .Career {
+  min-height: 100vh;
+}
+
+.Career {
+  padding: 60px 30px 30px 30px;
+}
+
+.Career > h2 {
+  border-bottom: 2px solid #aaaaaa;
+  padding-bottom: 15px;
+}
+
+.Career .Career-1 {
+  border: 2px solid #aaaaaa;
+  padding: 30px;
+  font-size: 1rem;
+}
+
+.Career .Career-1 > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Creer-Border {
+  border-bottom: 2px solid #aaaaaa;
+  padding-bottom: 30px;
+}
+
+/* Project */
+
+.Project {
+  padding: 60px 30px 30px 30px;
+}
+
+.Project-Ptn {
+  padding: 15px 30px 30px 30px;
+  border-top: 2px solid #aaaaaa;
+}
+
+/* Modal */
+.card {
+  height: 400px;
+  width: 310px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  overflow: hidden;
+  padding: 10px;
+}
+
+.card-header {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.card-body {
+  border: 1px solid #aaaaaa;
+  height: 245px;
+  font-size: 0.9rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  padding: 5px;
+}
+
+.card > .card-btn {
+  width: 100%;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #000;
+  color: #fff;
+  font-family: "Noto Sans KR", sans-serif;
+  cursor: pointer;
+}
+
+.ReactModalPortal > div {
+  margin: 0 auto;
+  min-height: 100vh;
+  z-index: 1001;
+}
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+
+.Modal-Header {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+.Modal-close {
+  float: right;
+}
+
+.Project > h2 {
+  border-bottom: 2px solid #aaaaaa;
+  padding-bottom: 15px;
+}
+
+.Project-content {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.Project-content > .banner {
+  height: 500px;
+  margin-bottom: 15px;
+}
+
+.Modal-img > img {
+  width: 65%;
+  height: 80%;
+}
+
+.Modal-img-Mo > img {
+  width: 15%;
+  height: 80%;
+}
+
+.ReactModal__Content {
+  margin: 0 auto;
+  width: 60%;
+}
+
+.Project-content > .banner > .swiper-button-prev:after {
+  color: #000;
+}
+
+.Project-content > .banner > .swiper-button-next:after {
+  color: #000;
+}
+
+/*Nav*/
+
+.navbar {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*padding: 0 2rem;*/
+  font-size: 1.2rem;
+  z-index: 99999;
+}
+
+.nav-logo {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+}
+
+.nav-links {
+  list-style: none;
+  /* display: none; */
+  /* flex-direction: column; */
+  position: absolute;
+  text-align: center;
+  width: 250px;
+  /* top: 80px; */
+  right: -100%;
+  transition: 0.5s all;
+  height: 100vh;
+  top: 0;
+  padding: 120px;
+  bottom: 0;
+  margin: 0;
+}
+
+.nav-link,
+.active {
+  background-color: #fff;
+  right: 0%;
+  transition: 0.5s all;
+}
+
+.nav-item {
+  padding: 30px 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s all;
+}
+
+.nav-link:hover {
+  color: #000;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.nav-icon {
+  display: flex;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 1003;
 }

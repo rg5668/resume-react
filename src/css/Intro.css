@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
+/* outer div에서 스크롤을 제어해주기 위해 overflow-y속성을 부여 */
+/* (height를 같이 지정해줘야 스크롤이 작동합니다.) */
+.outer {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* 화면에서 스크롤바 안보이게 */
+.outer::-webkit-scrollbar {
+  display: none;
+}
+
+/* Full-inner div가 전체화면을 채우도록 조절(height: 100vh) */
+.Full-inner {
+  height: 100vh;
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.Intro {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.Intro-Container {
+  display: flex;
+  padding: 30px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.Intro-Container > span > img {
+  width: 200px;
+  padding-left: 100px;
+}
+
+.Full-inner .Main-Title-Font {
+  font-size: 5rem;
+  font-weight: 700;
+  color: #f5d042;
+}
+
+.Full-inner .Main-Title-Sub-Font {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #f5d042;
+}
+/* 2page부터 */
+.Full-inner .Title-Font {
+  font-size: 2.8rem;
+  color: #0a174e;
+  font-weight: 700;
+  border-bottom: 4px solid #0a174e;
+  line-height: 3;
+}
+
+.Full-inner .Sub-Font {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #0a174e;
+  line-height: 1.87;
+}
+
+.Full-inner .Sub-Font-1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0a174e;
+}
+
+.bg-blue {
+  background-color: #f5d042;
+}
+
+.bg-yellow {
+  background-color: #0a174e;
+}
+
+.divider {
+  width: 100%;
+  height: 5px;
+  background-color: gray;
+}
+
+.Intro-btn {
+  margin-top: 7%;
+  width: 100%;
+}
+
+.Intro-content-btn {
+  margin-top: 5%;
+  padding-left: 100px;
+  width: 100%;
+}
+
+.Intro-content {
+  margin-top: 5%;
+  padding-left: 100px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0a174e;
+}
